@@ -17,10 +17,11 @@ namespace Account.Controllers
     {
         private IUserRepository _users;
         private ILogger _logger;
-        public UsersController(IUserRepository users, ILogger<User> logger)
+        //public UsersController(IUserRepository users, ILogger<User> logger)
+        public UsersController(IUserRepository users)
         {
             _users = users;
-            _logger = logger;
+            //_logger = logger;
         }
 
         // GET api/users
@@ -69,8 +70,8 @@ namespace Account.Controllers
             }
             catch (Exception ex )
             {
-                _logger.LogError("Application Erro.", ex.Message);
-                return Problem(statusCode: 500); 
+                //_logger.LogError("Application Error.", ex.Message);
+                return Problem(ex.Message, statusCode: 500); 
             }
         }
 

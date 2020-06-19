@@ -2,6 +2,8 @@
 *.ide-wal
 *.cache
 *.suo
+*.dll
+*.pdb
 bin/
 obj/
 .vs/
