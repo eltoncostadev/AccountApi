@@ -11,3 +11,7 @@ tests/Account.Tests/obj/Debug/netcoreapp3.1/Account.Tests.pdb
 tests/Account.Tests/obj/Debug/netcoreapp3.1/Account.Tests.dll
 tests/Account.Tests/bin/Debug/netcoreapp3.1/Account.Tests.pdb
 tests/Account.Tests/bin/Debug/netcoreapp3.1/Account.Tests.dll
+tests/Account.Tests/.vs/Account.Tests/DesignTimeBuild/.dtbcache
+tests/Account.Tests/.vs/Account.Tests/v16/.suo
+tests/Account.Tests/.vs/Account.Tests/v16/Server/sqlite3/db.lock
+tests/Account.Tests/.vs/Account.Tests/v16/Server/sqlite3/storage.ide
