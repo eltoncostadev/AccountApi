@@ -7,3 +7,7 @@
 bin/
 obj/
 .vs/
+tests/Account.Tests/obj/Debug/netcoreapp3.1/Account.Tests.pdb
+tests/Account.Tests/obj/Debug/netcoreapp3.1/Account.Tests.dll
+tests/Account.Tests/bin/Debug/netcoreapp3.1/Account.Tests.pdb
+tests/Account.Tests/bin/Debug/netcoreapp3.1/Account.Tests.dll
