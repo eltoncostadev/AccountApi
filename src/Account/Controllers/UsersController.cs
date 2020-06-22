@@ -16,12 +16,11 @@ namespace Account.Controllers
     public class UsersController : ControllerBase
     {
         private IUserRepository _users;
-        private ILogger _logger;
-        //public UsersController(IUserRepository users, ILogger<User> logger)
-        public UsersController(IUserRepository users)
+        private ILogger<IUserRepository> _logger;
+        public UsersController(IUserRepository users, ILogger<IUserRepository> logger)
         {
             _users = users;
-            //_logger = logger;
+            _logger = logger;
         }
 
         // GET api/users
@@ -68,10 +67,10 @@ namespace Account.Controllers
                 return CreatedAtRoute("GetById",
                     new { id = model.UserId }, model);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
-                //_logger.LogError("Application Error.", ex.Message);
-                return Problem(ex.Message, statusCode: 500); 
+                _logger.LogCritical(ex, "Application Error: {0}.", ex.Message);
+                return Problem(ex.Message, statusCode: 500);
             }
         }
 

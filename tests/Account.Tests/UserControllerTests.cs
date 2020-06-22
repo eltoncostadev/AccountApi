@@ -2,6 +2,7 @@
 using Account.Models;
 using Account.Models.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,11 @@ namespace Account.Tests
             var mockRepo = new Mock<IUserRepository>();
             mockRepo.Setup(repo => repo.GetAll())
                .ReturnsAsync(GetTestUsers());
-            var controller = new UsersController(mockRepo.Object);
+
+            var mockLog = new Mock<ILogger<IUserRepository>>();
+            ILogger<IUserRepository> logger = mockLog.Object;
+
+            var controller = new UsersController(mockRepo.Object, logger);
             
             // Act
             var result = await controller.Get();
